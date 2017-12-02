@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Switcher</string>
+    <string name="switch_dir">/switch/status/s</string>
+</resources>

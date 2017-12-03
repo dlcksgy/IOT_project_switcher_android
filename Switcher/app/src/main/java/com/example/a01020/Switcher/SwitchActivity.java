@@ -12,6 +12,14 @@ import android.widget.ToggleButton;
 
 public class SwitchActivity extends AppCompatActivity {
 
+    String stars = "                                                                          \n" +
+                    "   *           *                                                                \n" +
+                    "                          *                                                     \n" +
+                    "                                      *                       *                   \n" +
+                    "                                                                          \n" +
+                    "                                          *                                         \n" +
+                    "                                                        *                        \n";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,14 +48,7 @@ public class SwitchActivity extends AppCompatActivity {
                 } else {
                     switch1.setTextColor(Color.YELLOW);
                     background1.setBackground(getDrawable(R.color.nightGray));
-                    switch1.setText(
-                            "                                                                          \n" +
-                            "   *           *                                                                \n" +
-                            "                          *                                                     \n" +
-                            "                                      *                       *                   \n" +
-                            "                                                                          \n" +
-                            "                                          *                                         \n" +
-                            "                                                        *                        \n");
+                    switch1.setText(stars);
                 }
             }
         });
@@ -63,14 +64,7 @@ public class SwitchActivity extends AppCompatActivity {
                 } else {
                     switch2.setTextColor(Color.YELLOW);
                     background2.setBackground(getDrawable(R.color.nightGray));
-                    switch2.setText(
-                            "                                                                          \n" +
-                                    "   *           *                                                                \n" +
-                                    "                          *                                                     \n" +
-                                    "                                      *                       *                   \n" +
-                                    "                                                                          \n" +
-                                    "                                          *                                         \n" +
-                                    "                                                        *                        \n");
+                    switch2.setText(stars);
                 }
             }
         });
@@ -86,14 +80,7 @@ public class SwitchActivity extends AppCompatActivity {
                 } else {
                     switch3.setTextColor(Color.YELLOW);
                     background3.setBackground(getDrawable(R.color.nightGray));
-                    switch3.setText(
-                            "                                                                          \n" +
-                                    "   *           *                                                                \n" +
-                                    "                          *                                                     \n" +
-                                    "                                      *                       *                   \n" +
-                                    "                                                                          \n" +
-                                    "                                          *                                         \n" +
-                                    "                                                        *                        \n");
+                    switch3.setText(stars);
                 }
             }
         });

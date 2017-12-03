@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/backgroundReservationActivity"
     tools:context=".ReservationActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -215,13 +215,15 @@
         app:layout_constraintVertical_bias="0.231" />
 
     <TextView
+        android:background="@color/topBar"
+        android:gravity="left"
         android:id="@+id/text_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:padding="6dp"
         android:textSize="30dp"
         android:text="2017년"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

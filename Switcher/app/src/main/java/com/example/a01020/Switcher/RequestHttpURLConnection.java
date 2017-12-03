@@ -6,6 +6,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,6 +18,12 @@ import java.util.Map;
 
 public class RequestHttpURLConnection {
 
+    private final String IP = "210.119.31.211";
+    private final String DIR = "/switch/status/s";
+
+
+
+    //private String IP = "210.119.31.211";
     public String request(String _url, ContentValues _params){
 
         // HttpURLConnection 참조 변수.
@@ -59,7 +66,7 @@ public class RequestHttpURLConnection {
          * 2. HttpURLConnection을 통해 web의 데이터를 가져온다.
          * */
         try{
-            URL url = new URL("http", "210.119.31.211", 3000,"/");
+            URL url = new URL("http", IP, 3000,DIR);
             urlConn = (HttpURLConnection) url.openConnection();
 
             // [2-1]. urlConn 설정.
@@ -111,18 +118,18 @@ public class RequestHttpURLConnection {
 
     }
 
-    //switchNum번째 스위치가 켜져있으면 true, 꺼져있거나 알수 없으면 false 를 반환하는 메소드
-    public boolean SwitchStateRequest(int switchNum){
+    //switchNum번째 스위치가 켜져있으면 true, 꺼져있거나있으면 false, 알수없으면 null을 반환하는 메소드
+    public Boolean isSwitchOn(int switchNum){
 
         // HttpURLConnection 참조 변수.
         HttpURLConnection urlConn = null;
 
-        String serverDir = R.string.switch_dir + String.valueOf(switchNum);
+        String serverDir = DIR + String.valueOf(switchNum);
         /**
          * 2. HttpURLConnection을 통해 web의 데이터를 가져온다.
          * */
         try{
-            URL url = new URL("http", "210.119.31.211", 3000,serverDir);
+            URL url = new URL("http", IP, 3000,serverDir);
             urlConn = (HttpURLConnection) url.openConnection();
 
             // [2-1]. urlConn 설정.
@@ -132,7 +139,7 @@ public class RequestHttpURLConnection {
 
             // 연결 요청 확인.
              if (urlConn.getResponseCode() != HttpURLConnection.HTTP_OK)
-                 return false;
+                 return null;
 
             // 서버에서 받은 값을 BufferedReader로 받는다.
             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConn.getInputStream(), "UTF-8"));
@@ -160,8 +167,17 @@ public class RequestHttpURLConnection {
         }
 
 
-        return false;
+        return null;
 
+    }
+
+
+    //모든 스위치들의 상태를 반환하는 메소드
+    public Boolean[] allSwitchState(){
+        Boolean[] ret = {null, isSwitchOn(1),
+                isSwitchOn(2),
+                isSwitchOn(3)};
+        return ret;
     }
 
 }

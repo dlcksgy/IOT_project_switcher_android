@@ -8,4 +8,9 @@
     <color name="white">#FFFFFF</color>
     <color name="lightYellow">#F5F6CE</color>
     <color name="listViewSky">#CEF6F5</color>
+    <color name="backgroundReservationActivity">#A9BCF5</color>
+    <color name="topBar">#9F81F7</color>
+    <color name="nightGray">#0A0A2A</color>
+    <color name="dayYellow">#F3F781</color>
+    <color name="invisible">#00ffffff</color>
 </resources>

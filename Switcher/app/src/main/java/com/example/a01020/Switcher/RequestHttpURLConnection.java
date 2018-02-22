@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class RequestHttpURLConnection {
 
-    private final String IP = "210.119.31.211";
-    private final String DIR = "/switch/status/s";
+    private static final String IP = "210.119.31.211";
+    private static final String DIR = "/switch/status/s";
 
 
 
